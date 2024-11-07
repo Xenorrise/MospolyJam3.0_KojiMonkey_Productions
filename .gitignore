@@ -1,7 +1,18 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
+
+*.cs diff=csharp text
+*.cginc text
+*.shader text
+
+*.mat merge=unityyamlmerge
+*.anim merge=unityyamlmerge
+*.unity merge=unityyamlmerge
+*.prefab merge=unityyamlmerge
+*.physicsMaterial2D merge=unityyamlmerge
+*.physicsMaterial merge=unityyamlmerge
+*.asset merge=unityyamlmerge
+*.meta merge=unityyamlmerge
+*.controller merge=unityyamlmerge
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -71,16 +82,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-*.cs diff=csharp text
-*.cginc text
-*.shader text
 
-*.mat merge=unityyamlmerge
-*.anim merge=unityyamlmerge
-*.unity merge=unityyamlmerge
-*.prefab merge=unityyamlmerge
-*.physicsMaterial2D merge=unityyamlmerge
-*.physicsMaterial merge=unityyamlmerge
-*.asset merge=unityyamlmerge
-*.meta merge=unityyamlmerge
-*.controller merge=unityyamlmerge
