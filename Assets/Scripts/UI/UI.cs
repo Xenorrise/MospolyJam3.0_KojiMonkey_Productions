@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UI : MonoBehaviour
     public void OnClickPlay() 
     {
         _menu.Hide();
+        SceneManager.LoadScene(1);
     }
     public void OnClickSettings() 
     {
