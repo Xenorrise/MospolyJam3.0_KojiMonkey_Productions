@@ -12,6 +12,7 @@ public class BuildingPanel : MonoBehaviour
     {
         controller = FindAnyObjectByType<PlayerController>();
         tempBuilding = Instantiate(building).GameObject();
+        tempBuilding.GetComponent<Building>().isActive = false;
         Image tempBuildingImage = tempBuilding.GetComponent<Image>();
         transform.GetChild(0).GetComponent<Image>().sprite = tempBuildingImage.sprite;
         tempBuildingImage.color = new(tempBuildingImage.color.r, tempBuildingImage.color.g, tempBuildingImage.color.b, 0.5f);

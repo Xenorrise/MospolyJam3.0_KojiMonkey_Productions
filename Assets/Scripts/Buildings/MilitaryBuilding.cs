@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class MilitaryBuilding : Building
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float damage;
+    CurEnemy curEnemy;
+
+    void Awake()
     {
-        
+        curEnemy = FindAnyObjectByType<CurEnemy>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Doing()
     {
-        
+        base.Doing();
+        curEnemy.TakingDamage(damage);
     }
 }

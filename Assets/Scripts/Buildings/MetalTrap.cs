@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ScrapFactory : CivilBuilding
+public class MetalTrap: IndustrialBuilding
 {
     public int scrapProduction;
     CityEconomy cityEconomy;
@@ -10,8 +10,9 @@ public class ScrapFactory : CivilBuilding
         cityEconomy = FindAnyObjectByType<CityEconomy>();
     }
 
-    public override void Production()
+    public override void Doing()
     {
-        cityEconomy.scrap += scrapProduction;
+        base.Doing();
+        //cityEconomy.scrap += scrapProduction;
     }
 }
