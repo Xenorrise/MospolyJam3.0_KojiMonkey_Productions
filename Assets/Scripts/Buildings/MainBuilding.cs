@@ -12,8 +12,8 @@ public class MainBuilding : IndustrialBuilding
     public override void Doing()
     {
         base.Doing();
-        float newMechanisms = float.Parse(cityEconomy.food.text) + curMechanismsProduction;
-        cityEconomy.food.text = newMechanisms.ToString();
+        float newMechanisms = float.Parse(cityEconomy.mechanisms.text) + curMechanismsProduction;
+        cityEconomy.mechanisms.text = newMechanisms.ToString();
     }
 
     public override void EfficiencyCalculating(int addEffeciency)

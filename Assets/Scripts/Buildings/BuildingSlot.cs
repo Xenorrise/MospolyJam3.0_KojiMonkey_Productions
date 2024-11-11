@@ -6,15 +6,18 @@ public class BuildingSlot : MonoBehaviour
     public GameObject curBuilding;
     public int row, col;
     public bool itMilitarySlot;
+    public AudioClip buildSound, selectSound;
     PlayerController controller;
     Image curBuildingImage;
     CityEconomy cityEconomy;
-
+    AudioSource mainSource;
+    
     void Awake()
     {
         controller = FindAnyObjectByType<PlayerController>();
         curBuildingImage = GetComponent<Image>();
         cityEconomy = FindAnyObjectByType<CityEconomy>();
+        mainSource = FindAnyObjectByType<AudioSource>();
     }
 
     void Start()
@@ -71,12 +74,14 @@ public class BuildingSlot : MonoBehaviour
                 curBuildingImage.color = new(curBuildingImage.color.r, curBuildingImage.color.g, curBuildingImage.color.b, 1f);
                 curBuildingImage.sprite = controller.baseTemplate;
                 controller.curSelectedBuilding = null;
+                mainSource.PlayOneShot(buildSound, 0.25f);
                 CursorExit();
                 CursorEnter();
             }
             else if (curBuilding != null)
             {
                 controller.curSelectedControlBuilding = curBuilding;
+                mainSource.PlayOneShot(selectSound, 0.5f);
                 controller.BuildingControl();
             }
         }

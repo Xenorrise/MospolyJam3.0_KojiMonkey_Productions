@@ -104,6 +104,7 @@ MonoBehaviour:
   addEffeciancy: 0
   isDoing: 0
   isActive: 0
+  cantDemolished: 1
   neighborEffectsUsed: 
   mechanismsProduction: 2
   curMechanismsProduction: 0
@@ -199,20 +200,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2243671512632261031, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7379055754879682514, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7379055754879682514, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7501681314175325855, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -233,10 +226,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3864614079481920986}
     m_Modifications:
-    - target: {fileID: 972867579121293758, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1326231078613083886, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -328,10 +317,6 @@ PrefabInstance:
     - target: {fileID: 4771120430475361121, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
       propertyPath: m_Name
       value: DevastationIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 5600966597547903561, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

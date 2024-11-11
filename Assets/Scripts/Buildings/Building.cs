@@ -6,12 +6,13 @@ public class Building : MonoBehaviour
 {
     public float solariumCost, scrapCost, mechanismsCost, foodCost, peopleCost, doingTime, devastationTime, devastationCoef;
     public int curEfficiency, curDevastation, baseDevastationDecrease, addEffeciancy;
-    public bool isDoing, isActive;
+    public bool isDoing, isActive, cantDemolished;
     float curDoingTime, curDevastationTime;
     Slider doingSlider, devastationSlider;
     public bool[] neighborEffectsUsed;
     protected CityEconomy cityEconomy;
     protected Transform thisTR;
+    protected AudioSource mainSource;
 
     void OnEnable()
     {
@@ -24,6 +25,7 @@ public class Building : MonoBehaviour
         devastationSlider.value = curDevastation;
         doingSlider.maxValue = doingTime;
         doingSlider.value = 0f;
+        mainSource = FindAnyObjectByType<AudioSource>();
         isDoing = true;
     }
 
