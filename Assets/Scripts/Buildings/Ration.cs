@@ -12,7 +12,7 @@ public class Ration : IndustrialBuilding
     public override void Doing()
     {
         base.Doing();
-        float newFood = float.Parse(cityEconomy.food.text) + foodProduction;
+        float newFood = float.Parse(cityEconomy.food.text) + curFoodProduction;
         cityEconomy.food.text = newFood.ToString();
     }
 

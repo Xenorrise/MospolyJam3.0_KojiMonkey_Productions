@@ -40,10 +40,8 @@ public class Building : MonoBehaviour
     public virtual void NeighborSlotsEffectCheck()
     {
         BuildingSlot curSlot = thisTR.parent.GetComponent<BuildingSlot>();
-        
         if (curSlot.row + 1 < cityEconomy.buildingSlots.GetLength(0) && cityEconomy.buildingSlots[curSlot.row + 1, curSlot.col].transform.childCount > 1 && cityEconomy.buildingSlots[curSlot.row + 1, curSlot.col].transform.GetChild(1).GetComponent<Building>() != null)
         {
-            Debug.Log(gameObject.name);
             cityEconomy.buildingSlots[curSlot.row + 1, curSlot.col].transform.GetChild(1).GetComponent<Building>().NeighborSlotsEffect();
         }
         if (curSlot.row - 1 >= 0 && cityEconomy.buildingSlots[curSlot.row - 1, curSlot.col].transform.childCount > 1 && cityEconomy.buildingSlots[curSlot.row - 1, curSlot.col].transform.GetChild(1).GetComponent<Building>() != null)
@@ -95,5 +93,10 @@ public class Building : MonoBehaviour
     {
         curDevastation -= Convert.ToInt32(baseDevastationDecrease * devastationCoef);
         devastationSlider.value = curDevastation;
+    }
+
+    public virtual void Demolition()
+    {
+        Destroy(gameObject);
     }
 }

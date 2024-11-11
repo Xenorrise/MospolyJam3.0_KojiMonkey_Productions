@@ -16,4 +16,10 @@ public class Houses : ResidentionalBuilding
     {
         base.Doing();
     }
+
+    public override void Demolition()
+    {
+        cityEconomy.housesCount -= 1;
+        base.Demolition();
+    }
 }
