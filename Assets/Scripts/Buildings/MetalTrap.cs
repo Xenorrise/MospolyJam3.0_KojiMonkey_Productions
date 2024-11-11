@@ -4,11 +4,9 @@ using UnityEngine;
 public class MetalTrap: IndustrialBuilding
 {
     public int scrapProduction, curScrapProduction;
-    CityEconomy cityEconomy;
 
     void Awake()
     {
-        cityEconomy = FindAnyObjectByType<CityEconomy>();
         curScrapProduction = scrapProduction;
     }
 

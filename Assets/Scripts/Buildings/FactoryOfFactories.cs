@@ -3,12 +3,10 @@ using UnityEngine;
 public class FactoryOfFactories : IndustrialBuilding
 {
     public int solariumProduction, scrapProduction, mechanismsProduction, curSolariumProduction, curScrapProduction, curMechanismsProduction;
-    CityEconomy cityEconomy;
     int i = 0;
 
     void Awake()
     {
-        cityEconomy = FindAnyObjectByType<CityEconomy>();
         curSolariumProduction = solariumProduction;
         curScrapProduction = scrapProduction;
         curMechanismsProduction = mechanismsProduction;

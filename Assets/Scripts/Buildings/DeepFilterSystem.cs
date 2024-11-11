@@ -3,11 +3,9 @@ using UnityEngine;
 public class DeepFilterSystem : IndustrialBuilding
 {
     public int solariumProduction, curSolariumProduction;
-    CityEconomy cityEconomy;
 
     void Awake()
     {
-        cityEconomy = FindAnyObjectByType<CityEconomy>();
         curSolariumProduction = solariumProduction;
     }
 

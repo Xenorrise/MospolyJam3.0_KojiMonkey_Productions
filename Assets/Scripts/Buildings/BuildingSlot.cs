@@ -57,6 +57,7 @@ public class BuildingSlot : MonoBehaviour
             curBuilding.transform.position = transform.position;
             curBuilding.transform.SetParent(transform, true);
             curBuilding.transform.localScale = Vector3.one;
+            curBuilding.GetComponent<Building>().NeighborSlotsEffectCheck();
             curBuildingImage.color = new(curBuildingImage.color.r, curBuildingImage.color.g, curBuildingImage.color.b, 1f);
             controller.curSelectedBuilding = null;
         }

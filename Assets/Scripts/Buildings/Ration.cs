@@ -3,11 +3,9 @@ using UnityEngine;
 public class Ration : IndustrialBuilding
 {
     public int foodProduction, curFoodProduction;
-    CityEconomy cityEconomy;
 
     void Awake()
     {
-        cityEconomy = FindAnyObjectByType<CityEconomy>();
         curFoodProduction = foodProduction;
     }
 
