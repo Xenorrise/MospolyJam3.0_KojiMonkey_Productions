@@ -14,5 +14,9 @@ public class MilitaryBuilding : Building
     {
         base.Doing();
         curEnemy.TakingDamage(damage);
+        if(curEnemy.curEnemy == null)
+        {
+            isDoing = false;
+        }
     }
 }

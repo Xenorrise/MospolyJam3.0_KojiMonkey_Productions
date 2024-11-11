@@ -1,42 +1,52 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    public float moneyCost, scrapCost, maxPeopleCost, doingTime;
-    public int curEfficiency, curDevastation;
+    public float solariumCost, scrapCost, mechanismsCost, foodCost, peopleCost, doingTime, devastationTime, devastationCoef;
+    public int curEfficiency, curDevastation, baseDevastationDecrease;
     public bool isDoing, isActive;
-    public float curDoingTime;
-    public Slider doingSlider;
+    float curDoingTime, curDevastationTime;
+    Slider doingSlider, devastationSlider;
 
     void OnEnable()
     {
         doingSlider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
+        devastationSlider = transform.GetChild(1).GetChild(0).GetComponent<Slider>();
+        devastationSlider.maxValue = curDevastation;
+        devastationSlider.value = curDevastation;
         doingSlider.maxValue = doingTime;
         doingSlider.value = 0f;
         isDoing = true;
     }
 
-    public virtual void EfficiencyCalculating(float curPeople)
+    public virtual void EfficiencyCalculating(int addEffeciency)
     {
-        curEfficiency = Mathf.RoundToInt(curPeople / maxPeopleCost);
+        //curEfficiency = Mathf.RoundToInt(curPeople / maxPeopleCost);
     }
 
     void FixedUpdate()
     {
         if (isActive && isDoing)
         {
-            Debug.Log("1");
             if(curDoingTime < doingTime)
             {
                 curDoingTime += Time.fixedDeltaTime;
                 doingSlider.value = curDoingTime;
-                Debug.Log("2");
             }
             else
             {
-                Debug.Log("3");
                 Doing();
+            }
+            if (curDevastationTime < devastationTime)
+            {
+                curDevastationTime += Time.fixedDeltaTime;
+            }
+            else
+            {
+                curDevastationTime = 0f;
+                Devastation();
             }
         }
     }
@@ -45,5 +55,11 @@ public class Building : MonoBehaviour
     {
         curDoingTime = 0f;
         doingSlider.value = 0f;
+    }
+
+    public virtual void Devastation()
+    {
+        curDevastation -= Convert.ToInt32(baseDevastationDecrease * devastationCoef);
+        devastationSlider.value = curDevastation;
     }
 }
