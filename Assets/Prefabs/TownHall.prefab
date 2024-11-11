@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3864614079481920986}
   - component: {fileID: 8616731360925721680}
   - component: {fileID: 5699460562109397499}
-  - component: {fileID: 3384752070890849404}
+  - component: {fileID: 841466116652788729}
   m_Layer: 5
-  m_Name: Church
+  m_Name: TownHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1393719646809625121}
-  - {fileID: 5230985866102105400}
+  - {fileID: 1229860009164669572}
+  - {fileID: 4775460965762853165}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3384752070890849404
+--- !u!114 &841466116652788729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,14 +87,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 787159186283718846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ddde376e1c5304da69d97c9eac4b07, type: 3}
+  m_Script: {fileID: 11500000, guid: df630c95badfecb4bb8197b716539f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solariumCost: 100
-  scrapCost: 25
-  mechanismsCost: 20
-  foodCost: 0
-  peopleCost: 0
+  solariumCost: 50
+  scrapCost: 70
+  mechanismsCost: 15
+  foodCost: 50
+  peopleCost: 20
   doingTime: 0
   devastationTime: 20
   devastationCoef: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
   baseDevastationDecrease: 2
   isDoing: 0
   isActive: 0
-  addEffeciancy: 75
---- !u!1001 &95567480567496030
+  devastationDecrease: 0.5
+--- !u!1001 &222274616287555067
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -217,12 +217,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
---- !u!224 &1393719646809625121 stripped
+--- !u!224 &1229860009164669572 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1298438279894396799, guid: e6a25d686ee8ac7408ae20ba50a3014b, type: 3}
-  m_PrefabInstance: {fileID: 95567480567496030}
+  m_PrefabInstance: {fileID: 222274616287555067}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6557111098398082006
+--- !u!1001 &5774283576704569283
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -335,8 +335,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
---- !u!224 &5230985866102105400 stripped
+--- !u!224 &4775460965762853165 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1326231078613083886, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
-  m_PrefabInstance: {fileID: 6557111098398082006}
+  m_PrefabInstance: {fileID: 5774283576704569283}
   m_PrefabAsset: {fileID: 0}

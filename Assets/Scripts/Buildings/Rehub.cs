@@ -1,8 +1,12 @@
-public class CultureBuilding : Building
+using UnityEngine;
+
+public class Rehub : ResidentionalBuilding
 {
-    void Awake()
+    public float peopleDecrease;
+
+    void Start()
     {
-        if (isActive)
+        if(isActive)
         {
             NeighborSlotsEffect();
         }
@@ -43,6 +47,12 @@ public class CultureBuilding : Building
                 neighborEffectsUsed[3] = true;
             }
         }
+    }
+    public override void Doing()
+    {
+        base.Doing();
+        float newPeople = float.Parse(cityEconomy.people.text) - peopleDecrease;
+        cityEconomy.people.text = newPeople.ToString();
     }
 
     public override void Demolition()

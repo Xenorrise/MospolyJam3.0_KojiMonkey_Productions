@@ -90,6 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curBuilding: {fileID: 0}
+  row: 0
+  col: 0
+  itMilitarySlot: 0
+  buildSound: {fileID: 8300000, guid: 93195859b472e5745817941de246b45c, type: 3}
+  selectSound: {fileID: 8300000, guid: ea765a46f366a9d41b0d1fd3de1de170, type: 3}
 --- !u!1 &4231785084809135363
 GameObject:
   m_ObjectHideFlags: 0

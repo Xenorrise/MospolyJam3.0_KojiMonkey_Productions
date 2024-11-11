@@ -10,9 +10,19 @@ public class MilitaryBuilding : Building
         curEnemy = FindAnyObjectByType<CurEnemy>();
     }
 
+    void Start()
+    {
+        if(isActive)
+            NeighborSlotsEffectCheck();
+    }
+
     public override void Doing()
     {
         base.Doing();
         curEnemy.TakingDamage(damage);
+        if(curEnemy.curEnemy == null)
+        {
+            isDoing = false;
+        }
     }
 }
