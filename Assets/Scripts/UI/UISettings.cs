@@ -12,6 +12,13 @@ public class UISettings : UIElement
     [Space]
     [SerializeField] private RectTransform _buttonBack;
 
+    void Start()
+    {
+        SetMasterVolume();
+        SetSoundFXVolume();
+        SetMusicVolume();
+    }
+
     public override void Show()
     {
         gameObject.SetActive(true);
@@ -57,17 +64,26 @@ public class UISettings : UIElement
     public void SetMasterVolume()
     {
         float volume = _masterSlider.value;
-        _audioMixer.SetFloat("master", Mathf.Log10(volume) * 20);
+        if(volume > 0)
+            _audioMixer.SetFloat("master", Mathf.Log10(volume) * 20);
+        else
+            _audioMixer.SetFloat("master", -80);
     }
     public void SetSoundFXVolume()
     {
         float volume = _soundFXSlider.value;
-        _audioMixer.SetFloat("soundFX", Mathf.Log10(volume) * 20);
+        if(volume > 0)
+            _audioMixer.SetFloat("soundFX", Mathf.Log10(volume) * 20);
+        else
+            _audioMixer.SetFloat("soundFX", -80);
     }
     public void SetMusicVolume()
     {
         float volume = _musicSlider.value;
-        _audioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
+        if(volume > 0)
+            _audioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
+        else
+            _audioMixer.SetFloat("music", -80);
     }
     
 }

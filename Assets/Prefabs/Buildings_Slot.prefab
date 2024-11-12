@@ -95,6 +95,7 @@ MonoBehaviour:
   itMilitarySlot: 0
   buildSound: {fileID: 8300000, guid: 93195859b472e5745817941de246b45c, type: 3}
   selectSound: {fileID: 8300000, guid: ea765a46f366a9d41b0d1fd3de1de170, type: 3}
+  warningSound: {fileID: 8300000, guid: 95388df75606da3428455490229e85df, type: 3}
 --- !u!1 &4231785084809135363
 GameObject:
   m_ObjectHideFlags: 0

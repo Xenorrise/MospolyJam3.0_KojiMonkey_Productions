@@ -7,12 +7,16 @@ public class Building : MonoBehaviour
     public float solariumCost, scrapCost, mechanismsCost, foodCost, peopleCost, doingTime, devastationTime, devastationCoef;
     public int curEfficiency, curDevastation, baseDevastationDecrease, addEffeciancy;
     public bool isDoing, isActive, cantDemolished;
+    public AudioClip strikeSound;
+    public GameObject fire;
     float curDoingTime, curDevastationTime;
-    Slider doingSlider, devastationSlider;
+    public Slider devastationSlider;
+    Slider doingSlider;
     public bool[] neighborEffectsUsed;
     protected CityEconomy cityEconomy;
     protected Transform thisTR;
     protected AudioSource mainSource;
+    protected PlayerController playerController;
 
     void OnEnable()
     {
@@ -26,6 +30,7 @@ public class Building : MonoBehaviour
         doingSlider.maxValue = doingTime;
         doingSlider.value = 0f;
         mainSource = FindAnyObjectByType<AudioSource>();
+        playerController = FindAnyObjectByType<PlayerController>();
         isDoing = true;
     }
 
@@ -93,10 +98,27 @@ public class Building : MonoBehaviour
 
     public virtual void Devastation()
     {
-        curDevastation -= Convert.ToInt32(baseDevastationDecrease * devastationCoef);
-        devastationSlider.value = curDevastation;
+        TakingDamage(Convert.ToInt32(baseDevastationDecrease * devastationCoef), true);
     }
 
+    public virtual void TakingDamage(int damage, bool itNeture)
+    {
+        curDevastation -= damage;
+        devastationSlider.value = curDevastation;
+        if (!itNeture)
+        {
+            mainSource.PlayOneShot(strikeSound);
+            fire.SetActive(true);
+            Invoke(nameof(StrikeFireDisapper), 0.25f);
+        }
+        if (curDevastation <= 0f)
+            playerController.BuildingDemolition(gameObject);
+    }
+
+    public void StrikeFireDisapper()
+    {
+        fire.SetActive(false);
+    }
     public virtual void Demolition()
     {
         Destroy(gameObject);

@@ -21,4 +21,10 @@ public class MainBuilding : IndustrialBuilding
         curEfficiency += addEffeciency;
         curMechanismsProduction = mechanismsProduction * curEfficiency / 100;
     }
+
+    public override void Demolition()
+    {
+        playerController.GameOver();
+        base.Demolition();
+    }
 }

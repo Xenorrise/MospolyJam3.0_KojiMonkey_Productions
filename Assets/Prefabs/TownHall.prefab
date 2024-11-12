@@ -33,6 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 1229860009164669572}
   - {fileID: 4775460965762853165}
+  - {fileID: 5292030046932037890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2108a2ff28f52be4cb50c8f3fc77fe4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df4a017ee658d5342b5a9d93712dc900, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -90,20 +91,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df630c95badfecb4bb8197b716539f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solariumCost: 50
-  scrapCost: 70
-  mechanismsCost: 15
-  foodCost: 50
-  peopleCost: 20
+  solariumCost: 150
+  scrapCost: 120
+  mechanismsCost: 20
+  foodCost: 100
+  peopleCost: 50
   doingTime: 0
   devastationTime: 20
   devastationCoef: 1
   curEfficiency: 100
   curDevastation: 100
   baseDevastationDecrease: 2
+  addEffeciancy: 0
   isDoing: 0
   isActive: 0
+  cantDemolished: 0
+  strikeSound: {fileID: 8300000, guid: 57d9a20d1e7993c4bb1043eb811ff786, type: 3}
+  fire: {fileID: 5147918293862742288}
+  devastationSlider: {fileID: 0}
+  neighborEffectsUsed: 
   devastationDecrease: 0.5
+--- !u!1 &5147918293862742288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5292030046932037890}
+  - component: {fileID: 6885578550819105581}
+  - component: {fileID: 3109045552515507186}
+  m_Layer: 5
+  m_Name: Fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5292030046932037890
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147918293862742288}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.52502996, y: 0.52502996, z: 0.52502996}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3864614079481920986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -13.399994}
+  m_SizeDelta: {x: 100, y: 72.39}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6885578550819105581
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147918293862742288}
+  m_CullTransparentMesh: 1
+--- !u!114 &3109045552515507186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147918293862742288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cd76b557fbb904c4e801547b019c9301, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &222274616287555067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,10 +312,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3864614079481920986}
     m_Modifications:
-    - target: {fileID: 972867579121293758, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1326231078613083886, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -325,10 +403,6 @@ PrefabInstance:
     - target: {fileID: 4771120430475361121, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
       propertyPath: m_Name
       value: DevastationIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 5600966597547903561, guid: fe13996e7269ee942bcee1acd397a801, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
